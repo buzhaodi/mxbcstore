@@ -63,9 +63,9 @@ class Store(models.Model):
 
     locationkey = models.ForeignKey(location, on_delete=models.CASCADE, verbose_name='线路')
     typeskey = models.ForeignKey(types, on_delete=models.CASCADE, verbose_name='类型')
-    designerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='设计师',related_name='design_name')
-    managerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='监理',related_name='manager_name')
-    companykey = models.ForeignKey(company, on_delete=models.CASCADE, verbose_name='公司')
+    designerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='设计师',related_name='design_name', null=True, blank=True)
+    managerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='监理',related_name='manager_name', null=True, blank=True)
+    companykey = models.ForeignKey(company, on_delete=models.CASCADE, verbose_name='公司', null=True, blank=True)
 
 
 class storelog(models.Model):

@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import xadmin
+from django.views.static import serve
+from .settings import MEDIA_ROOT
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
 
 ]
+urlpatterns += static('/image/', document_root=MEDIA_ROOT)
