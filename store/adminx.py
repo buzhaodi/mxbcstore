@@ -35,6 +35,22 @@ class storelogAdmin(object):
     list_filter = ['storekey__num','logtypekey__lname','log','date']
     search_fields = ['storekey','logtypekey','date','log']
 
+class supportslogAdmin(object):
+    list_display = ['store','description','type']
+    list_filter = ['store__name','type','store']
+    search_fields = ['store__name','description']
+
+
+class infoslogAdmin(object):
+    list_display = ['store','info']
+    list_filter = ['store__name','info']
+    search_fields = ['store__name','info']
+
+class picsAdmin(object):
+    list_display = ['store','info']
+    list_filter = ['store__name','info']
+    search_fields = ['store__name','info']
+
 
 
 xadmin.site.register(company,companyAdmin)
@@ -44,5 +60,9 @@ xadmin.site.register(location)
 xadmin.site.register(logtype)
 xadmin.site.register(storelog,storelogAdmin)
 xadmin.site.register(Store,storeAdmin)
+
+xadmin.site.register(pics,picsAdmin)
+xadmin.site.register(infos,infoslogAdmin)
+xadmin.site.register(supports,supportslogAdmin)
 
 

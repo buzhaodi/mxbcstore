@@ -14,14 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 import xadmin
+
+
+
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
+    path('goods/', include('goods.urls')),
+    path('store/', include('store.urls'))
+
 
 ]
 urlpatterns += static('/image/', document_root=MEDIA_ROOT)
