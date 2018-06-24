@@ -27,6 +27,7 @@ class storeAdmin(object):
     list_display = ['pk','num','area','typeskey','locationkey','address','customertel','Dateofaudit','status','designerkey','managerkey','companykey']
     list_filter = ['designerkey']
     search_fields = ['num','area','types']
+    style_fields = {'permissions': 'm2m_transfer'}
 
     inlines = [storloginline]
 
