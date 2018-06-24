@@ -14,12 +14,15 @@ class goodsadmin(object):
     list_filter = ['type','name','price','oldprice']
     search_fields = ['type','price','oldprice']
     style_fields = {'stores': 'm2m_transfer'}
+    model_icon = 'fa fa-asterisk'
+
+
 
 class ratingsadmin(object):
     list_display = ['avatar','user','time','rateType','text']
     list_filter = ['user','rateType','time']
     search_fields = ['user','rateType','text','time']
-
+    model_icon = 'fa fa-list'
 
 
 

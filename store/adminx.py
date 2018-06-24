@@ -17,6 +17,7 @@ class companyAdmin(object):
     list_display = ['pk','cname','ctel','cworker']
     list_filter = ['cname']
     search_fields = ['cname','ctel','cworker']
+    model_icon = 'fa fa-home'
 
 
 class storloginline(object):
@@ -27,7 +28,7 @@ class storeAdmin(object):
     list_display = ['pk','num','area','typeskey','locationkey','address','customertel','Dateofaudit','status','designerkey','managerkey','companykey']
     list_filter = ['designerkey']
     search_fields = ['num','area','types']
-    style_fields = {'permissions': 'm2m_transfer'}
+    model_icon = 'fa fa-meetup'
 
     inlines = [storloginline]
 
@@ -35,6 +36,7 @@ class storelogAdmin(object):
     list_display = ['storekey','logtypekey','log','date']
     list_filter = ['storekey__num','logtypekey__lname','log','date']
     search_fields = ['storekey','logtypekey','date','log']
+    model_icon = 'fa fa-file-text'
 
 class supportslogAdmin(object):
     list_display = ['store','description','type']
@@ -46,11 +48,14 @@ class infoslogAdmin(object):
     list_display = ['store','info']
     list_filter = ['store__name','info']
     search_fields = ['store__name','info']
+    model_icon = 'fa fa-info-circle'
+
 
 class picsAdmin(object):
     list_display = ['store','info']
     list_filter = ['store__name','info']
     search_fields = ['store__name','info']
+    model_icon = 'fa fa-picture-o'
 
 
 
