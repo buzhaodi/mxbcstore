@@ -66,7 +66,7 @@ class Store(models.Model):
     designerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='设计师',related_name='design_name', null=True, blank=True)
     managerkey = models.ForeignKey("user.UserProfile", on_delete=models.CASCADE, verbose_name='监理',related_name='manager_name', null=True, blank=True)
     companykey = models.ForeignKey(company, on_delete=models.CASCADE, verbose_name='公司', null=True, blank=True)
-    avatar=models.ImageField(upload_to="image/%Y/%m",default=u"image/default.png",max_length=100,verbose_name='店面头像')
+    avatar=models.ImageField(upload_to="image/%Y/%m",default=u"image/default.png",max_length=100,verbose_name='店面头像', null=True, blank=True)
     bulletin=models.CharField(max_length=400,verbose_name='店面描述', null=True, blank=True)
     deliveryTime=models.IntegerField(verbose_name='平均出餐时长', null=True, blank=True)
     description=models.CharField(max_length=50,verbose_name='店面简单描述', null=True, blank=True)

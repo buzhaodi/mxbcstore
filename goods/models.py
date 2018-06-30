@@ -5,9 +5,9 @@ class types(models.Model):
     class Meta:
         verbose_name_plural = '种类'
     def __str__(self):
-        return str(self.typename)
-    typename=models.CharField(max_length=50,verbose_name='分类名称')
-    sale = models.CharField(choices=(("-1", u"普通"), ("2", u"特价"), ("1", u"折扣")), default="-1", max_length=5,verbose_name='是否折扣')
+        return str(self.name)
+    name=models.CharField(max_length=50,verbose_name='分类名称')
+    type = models.CharField(choices=(("-1", u"普通"), ("2", u"特价"), ("1", u"折扣")), default="-1", max_length=5,verbose_name='是否折扣')
 
 
 
